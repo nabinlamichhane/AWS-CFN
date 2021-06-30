@@ -1,0 +1,40 @@
+---
+Description: Instagram ingestion facilitator
+Resources:
+  rPolicyAgentIdleCheck:
+
+    Type: AWS::IAM::ManagedPolicy
+
+    Properties:
+      Description: For test purpose
+      ManagedPolicyName: cnc-rPolicyAgentIdleCheck
+
+      PolicyDocument:
+
+        Version: '2012-10-17'
+
+        Statement:
+
+          - Effect: Allow
+
+            Action:
+
+              - appsync:GraphQL
+
+            Resource:
+
+          # CF created
+
+              - !Sub "arn:aws:appsync:${AWS::Region}:${AWS::AccountId}:apis/*"
+
+          - Effect: Allow
+
+            Action:
+
+              - sqs:SendMessage
+
+              - sqs:GetQueueAttributes
+
+            Resource:
+
+              - !Sub "arn:aws:sqs:${AWS::Region}:${AWS::AccountId}:AgentCommandsQueue*"
