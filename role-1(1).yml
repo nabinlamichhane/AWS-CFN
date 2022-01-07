@@ -6,7 +6,7 @@ Resources:
     Type: AWS::IAM::ManagedPolicy
 
     Properties:
-      Description: For test purpose
+      Description: For test purpose for me
       ManagedPolicyName: cnc-rPolicyAgentIdleCheck
 
       PolicyDocument:
