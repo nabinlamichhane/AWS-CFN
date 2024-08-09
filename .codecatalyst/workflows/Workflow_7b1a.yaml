@@ -1,0 +1,11 @@
+Name: Workflow_7b1a
+SchemaVersion: "1.0"
+
+# Optional - Set automatic triggers.
+Triggers:
+  - Type: Push
+    Branches:
+      - nabinlamichhane-patch-3
+
+# Required - Define action configurations.
+Actions:
